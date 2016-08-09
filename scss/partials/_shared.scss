@@ -1,0 +1,22 @@
+
+ul {
+	width: 400px;
+	border: 1px solid blue;
+	li {
+		list-style: none;
+		display: block;
+		border-bottom: 1px solid blue;
+		height: 30px;
+		background: blue;
+		opacity: 0;
+		transition: opacity 0.5s;
+		&:last-child {
+			border: none;
+		}
+		&.flooded {
+			opacity: 1;
+		}
+	}
+}
+
+
