@@ -1,18 +1,18 @@
 
-# Front-end Dev Playground
+# Flood
 
-simple playground package for starting ideas!
+A simple way of transitioning child elements through a toggle.
 
-```cli
-npm install
 ```
+;( function( w, $, d ) {
 
-```cli
-bower install
-```
+	$(d).ready( function() {
 
-Edit the config file and add in your local domain alias
+		$('ul').flood({
+			state : 'closed'
+		});
 
-```cli
-gulp
+	});
+
+})( window, jQuery, document );
 ```
