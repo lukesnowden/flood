@@ -1,20 +1,60 @@
 
+.container {
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+
 ul {
-	width: 400px;
+	@include col(1/3);
+	&:nth-child(3n) {
+		@include last;
+	}
 	border: 1px solid blue;
+	float: left;
+	overflow: hidden;
 	li {
 		list-style: none;
 		display: block;
-		border-bottom: 1px solid blue;
+		border-bottom: 1px solid white;
 		height: 30px;
 		background: blue;
-		opacity: 0;
-		transition: opacity 0.5s;
-		&:last-child {
-			border: none;
+	}
+	&.ex1 {
+		li {
+			opacity: 0;
+			transition: opacity 0.5s;
+			&.flooded {
+				opacity: 1;
+			}
+			&:last-child {
+				border-bottom: none;
+			}
 		}
-		&.flooded {
-			opacity: 1;
+	}
+	&.ex2 {
+		li {
+			transform : translateX(-100%);
+			&:nth-child(2n) {
+				transform : translateX(100%);
+			}
+			transition: transform 0.5s;
+			&.flooded {
+				transform : translateX(0%);
+			}
+			&:last-child {
+				border-bottom: none;
+			}
+		}
+	}
+	&.ex3 {
+		li {
+			&:first-child {
+				border-bottom: none;
+			}
+			transition: transform 0.5s;
+			&.flooded {
+				transform: rotateX(180deg);
+			}
 		}
 	}
 }

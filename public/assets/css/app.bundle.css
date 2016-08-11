@@ -1481,22 +1481,67 @@ html.show-model {
     .wordpress #content-wrapper > div .fourCol #searchform {
       margin: 0 0 20px 0; }
 
+.container {
+  padding-top: 40px;
+  padding-bottom: 40px; }
+
 ul {
-  width: 400px;
-  border: 1px solid blue; }
+  float: left;
+  clear: none;
+  text-align: inherit;
+  padding-left: 0;
+  padding-right: 0;
+  width: 31.33333%;
+  margin-left: 0%;
+  margin-right: 3%;
+  border: 1px solid blue;
+  float: left;
+  overflow: hidden; }
+  ul:after {
+    content: "";
+    display: table;
+    clear: both; }
+  ul:nth-child(3n) {
+    margin-right: 0;
+    float: right; }
   ul li {
     list-style: none;
     display: block;
-    border-bottom: 1px solid blue;
+    border-bottom: 1px solid white;
     height: 30px;
-    background: blue;
+    background: blue; }
+  ul.ex1 li {
     opacity: 0;
     -webkit-transition: opacity 0.5s;
             transition: opacity 0.5s; }
-    ul li:last-child {
-      border: none; }
-    ul li.flooded {
+    ul.ex1 li.flooded {
       opacity: 1; }
+    ul.ex1 li:last-child {
+      border-bottom: none; }
+  ul.ex2 li {
+    -webkit-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 0.5s;
+            transition: transform 0.5s; }
+    ul.ex2 li:nth-child(2n) {
+      -webkit-transform: translateX(100%);
+          -ms-transform: translateX(100%);
+              transform: translateX(100%); }
+    ul.ex2 li.flooded {
+      -webkit-transform: translateX(0%);
+          -ms-transform: translateX(0%);
+              transform: translateX(0%); }
+    ul.ex2 li:last-child {
+      border-bottom: none; }
+  ul.ex3 li {
+    -webkit-transition: -webkit-transform 0.5s;
+            transition: transform 0.5s; }
+    ul.ex3 li:first-child {
+      border-bottom: none; }
+    ul.ex3 li.flooded {
+      -webkit-transform: rotateX(180deg);
+              transform: rotateX(180deg); }
 
 /**
  * CONTAINER WIDTH - DONT ALTER
